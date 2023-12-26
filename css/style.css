@@ -30,3 +30,42 @@
     border: 0;
     padding: 10px;
 }
+
+.btn_favorito:hover {
+    color: rgb(255, 78, 78);
+    background-color: rgb(255, 199, 199);
+}
+
+.header {
+    background-color: #562E36;
+}
+
+.nav__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav__item {
+    width: 100px;
+    margin: 0 0.9rem;
+    list-style-type: none;
+}
+
+.nav__link {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.95rem;
+    letter-spacing: 0.015rem;
+    margin: 0.8rem 0;
+    color: white;
+}
+
+.nav__icon {
+    vertical-align: middle;
+    font-size: 0.75rem;
+    padding: 0 0.5rem 0.2rem 0;
+    color: white;
+}
