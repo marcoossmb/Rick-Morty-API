@@ -4,9 +4,7 @@ let box = document.getElementById("box")
 const busqueda = async () => {
     let response = await fetch("https://rickandmortyapi.com/api/character")
     let data = await response.json();
-    data.results.forEach(element => {
-        console.log(element)
-        
+    data.results.forEach(element => {        
         crearElementos(element);
     });
 }

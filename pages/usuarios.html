@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="shortcut icon" href="../assets/images/rickandmorty.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Usuarios</title>
+</head>
+
+<body class="body">
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="../index.html" class="nav__link">
+                            <i class="nav__icon fas fa-home"></i>Inicio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="./pages/usuarios.html" class="nav__link">
+                            <i class="nav__icon fas fa-users"></i>Usuarios
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">
+                            <i class="nav__icon fa-solid fa-star"></i>Favoritos
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="main" id="main">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th class="tabla__td">Nombre</th>
+                        <th class="tabla__td">Apellidos</th>
+                        <th class="tabla__td">Email</th>
+                        <th class="tabla__td">Última Conexión</th>
+                    </tr>
+                </thead>
+                <tbody class="tabla__body" id="tabla__body">
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <script src="../js/usuarios.js"></script>
+</body>
+
+</html>

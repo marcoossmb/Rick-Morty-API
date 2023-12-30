@@ -1,6 +1,11 @@
 .container {
-    width: 1080px;
+    min-width: 450px;
+    max-width: 1080px;
     margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 
 .box {
@@ -38,6 +43,7 @@
 
 .header {
     background-color: #562E36;
+    box-sizing: border-box;
 }
 
 .nav__list {
@@ -68,4 +74,44 @@
     font-size: 0.75rem;
     padding: 0 0.5rem 0.2rem 0;
     color: white;
+}
+
+body {
+    background-image: url(../assets/images/rickandmorty.jpg);
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.main {
+    margin-top: 20px;
+}
+
+.tabla {
+    border-collapse: collapse;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.tabla__td {
+    text-align: left;
+    border: 1px solid #562E36;
+}
+
+@media only screen and (max-width: 768px) {
+    .container2 {
+        padding: 10px;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav__item {
+        margin: 0.5rem 0;
+    }
 }
