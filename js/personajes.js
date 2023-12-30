@@ -1,3 +1,5 @@
+let main = document.getElementById("main")
+
 class Personajes {
     constructor(codigo, nombre, tipo, imagen) {
         this.codigo = codigo;
@@ -34,3 +36,32 @@ class Personajes {
         this.imagen = imagen;
     }
 }
+
+let listaFavoritos = JSON.parse(localStorage.getItem("clave"));
+
+const crearFavoritos = () => {
+    const main = document.getElementById("main");
+
+    listaFavoritos.forEach(personaje => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        const nombre = document.createElement("p");
+        nombre.textContent = personaje.nombre;
+
+        const tipo = document.createElement("p");
+        tipo.textContent = personaje.tipo;
+
+        const imagen = document.createElement("img");
+        imagen.src = personaje.imagen;
+        imagen.classList.add("card__img")
+
+        card.appendChild(nombre);
+        card.appendChild(tipo);
+        card.appendChild(imagen);
+
+        main.appendChild(card);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", crearFavoritos)

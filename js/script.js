@@ -1,15 +1,9 @@
 let container = document.getElementById("container")
 let box = document.getElementById("box")
+let btn_favorito = document.getElementById("btn_favorito")
 
-const busqueda = async () => {
-    let response = await fetch("https://rickandmortyapi.com/api/character")
-    let data = await response.json();
-    data.results.forEach(element => {        
-        crearElementos(element);
-    });
-}
-
-document.addEventListener("DOMContentLoaded", busqueda);
+let listaFavorito = [];
+personajefavorito = null;
 
 function crearElementos(element) {
     let div = document.createElement("DIV");
@@ -32,6 +26,36 @@ function crearElementos(element) {
 
     let favorites = document.createElement("BUTTON");
     favorites.textContent = "Favorito";
+    favorites.id = "btn_favorito";
     favorites.classList.add("btn_favorito");
     div.appendChild(favorites);
 }
+
+const busqueda = async () => {
+    let response = await fetch("https://rickandmortyapi.com/api/character")
+    let data = await response.json();
+    data.results.forEach(element => {
+        crearElementos(element);
+    });
+}
+
+const anadirItem = (event) => {
+    if (event.target.nodeName == "BUTTON") {
+        personajefavorito = {
+            nombre: event.target.previousElementSibling.previousElementSibling.textContent,
+            tipo: event.target.previousElementSibling.textContent,
+            imagen: event.target.previousElementSibling.previousElementSibling.previousElementSibling.src,
+        };
+        listaFavorito.push(personajefavorito);
+
+        guardarLocal(listaFavorito)
+        console.log(listaFavorito)
+    }
+}
+function guardarLocal(listaFavorito) {
+    const favoritoString = JSON.stringify(listaFavorito);
+    localStorage.setItem("clave", favoritoString);
+}
+
+document.addEventListener("click", anadirItem)
+document.addEventListener("DOMContentLoaded", busqueda);
