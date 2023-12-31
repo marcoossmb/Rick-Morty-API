@@ -40,28 +40,33 @@ class Personajes {
 let listaFavoritos = JSON.parse(localStorage.getItem("clave"));
 
 const crearFavoritos = () => {
-    const main = document.getElementById("main");
 
-    listaFavoritos.forEach(personaje => {
-        const card = document.createElement("div");
-        card.classList.add("card");
+    if (listaFavoritos == null) {
+        let nada = document.createElement("p")
+        nada.textContent = "Aún no tienes persoanjes favoritos"
+        main.appendChild(nada);
+    } else {
+        listaFavoritos.forEach(personaje => {
+            const card = document.createElement("div");
+            card.classList.add("card");
 
-        const nombre = document.createElement("p");
-        nombre.textContent = personaje.nombre;
+            const nombre = document.createElement("p");
+            nombre.textContent = "Nombre: " + personaje.nombre;
 
-        const tipo = document.createElement("p");
-        tipo.textContent = personaje.tipo;
+            const tipo = document.createElement("p");
+            tipo.textContent = "Tipo: " + personaje.tipo;
 
-        const imagen = document.createElement("img");
-        imagen.src = personaje.imagen;
-        imagen.classList.add("card__img")
+            const imagen = document.createElement("img");
+            imagen.src = personaje.imagen;
+            imagen.classList.add("card__img")
 
-        card.appendChild(nombre);
-        card.appendChild(tipo);
-        card.appendChild(imagen);
+            card.appendChild(nombre);
+            card.appendChild(tipo);
+            card.appendChild(imagen);
 
-        main.appendChild(card);
-    });
+            main.appendChild(card);
+        });
+    }
 }
 
 document.addEventListener("DOMContentLoaded", crearFavoritos)

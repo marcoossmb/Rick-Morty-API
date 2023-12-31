@@ -49,7 +49,6 @@ const anadirItem = (event) => {
         listaFavorito.push(personajefavorito);
 
         guardarLocal(listaFavorito)
-        console.log(listaFavorito)
     }
 }
 function guardarLocal(listaFavorito) {
