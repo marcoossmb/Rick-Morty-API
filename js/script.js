@@ -1,5 +1,5 @@
 let container = document.getElementById("container")
-let box = document.getElementById("box")
+let box = document.getElementById("main")
 let btn_favorito = document.getElementById("btn_favorito")
 
 let listaFavorito = [];
